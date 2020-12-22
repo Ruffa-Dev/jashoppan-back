@@ -3,20 +3,21 @@
  *
  */
 
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema(
+  {
     category: String,
     title: String,
     imagexs: String,
     image: String,
-    price : Number,
-    characteristics: Array
-    
-},
-{
-  collection:"products"  
-}
+    price: Number,
+    characteristics: Array,
+    tva: Number,
+  },
+  {
+    collection: "products",
+  }
 );
 
-module.exports = mongoose.model('Product', productSchema);
+module.exports = mongoose.model("Product", productSchema);

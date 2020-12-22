@@ -16,5 +16,6 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#404040",
-    "npm-scripts.showStartNotification": false
+    "npm-scripts.showStartNotification": false,
+    "npm.packageManager": "npm"
 }

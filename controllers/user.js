@@ -9,7 +9,6 @@ const user = {
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       email: req.body.email,
-      birthday: req.body.birthday,
       password: bcrypt.hashSync(req.body.password, 10),
       address: req.body.address,
       postcode: req.body.postcode,
@@ -58,9 +57,6 @@ const user = {
       ? req.body.lastname
       : req.user.lastname;
     req.user.email = req.body.email ? req.body.email : req.user.email;
-    req.user.birthday = req.body.birthday
-      ? req.body.birthday
-      : req.user.birthday;
     req.user.password = req.body.password
       ? bcrypt.hashSync(req.body.password, 10)
       : req.user.password;
@@ -88,7 +84,7 @@ const user = {
   addToCart: (req, res) => {
     Product.findOne(
       { _id: req.body.id },
-      "title price imagexs",
+      "title price imagexs tva",
       (error, product) => {
         if (error || !product) {
           res.status(500).json({
@@ -101,6 +97,7 @@ const user = {
             name: product.title,
             price: product.price,
             imagexs: product.imagexs,
+            tva: product.tva,
           });
         }
         req.user.save((error) => {

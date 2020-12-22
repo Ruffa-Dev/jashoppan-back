@@ -20,6 +20,7 @@ const admin = {
         image: req.body.image,
         imagexs: req.body.imagexs,
         price: req.body.price,
+        tva: req.body.tva,
       },
 
       (err) => {

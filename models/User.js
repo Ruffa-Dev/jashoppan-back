@@ -11,6 +11,7 @@ const productSchema = new mongoose.Schema({
   name: String,
   price: Number,
   imagexs: String,
+  tva: Number,
 });
 
 const contactSchema = new mongoose.Schema({
@@ -20,7 +21,6 @@ const contactSchema = new mongoose.Schema({
     type: String,
     unique: true,
   },
-  birthday: String,
   password: String,
   address: String,
   postcode: String,
